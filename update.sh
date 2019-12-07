@@ -3,7 +3,7 @@
 
 # pull latest
 echo "Pulling..." 
-git pull https://github.com/fl0r1s/cr10_klipper/
+git pull
 # Copy generic files
 echo "Copying generic files..." 
 cp -v -r generic/*.cfg ~/ 
