@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# make a backup of printer.cfg
+echo "Backing up printer.cfg to printer.backup..." 
+mv ~/printer.cfg ~/printer.backup
+
+read -p "Do you want to clean home directory? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    rm ~/*.cfg
+fi
 
 # pull latest
 echo "Pulling..." 
@@ -8,15 +18,16 @@ git pull https://github.com/fl0r1s/cr10_klipper/
 echo "Copying generic files..." 
 cp -v -r generic/*.cfg ~/ 
 
-# ask if user wants to keep printer.cfg
-while true; do
-    read -p "Do you want to keep calibration parameters in printer.cfg?" yn
-    case $yn in
-        [Yy]* ) rm $PRINTER_NAME/printer.cfg; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
 # copy all files that end with cfg to 1 up
 echo "Copying config files for $PRINTER_NAME..." 
 cp -v -r $PRINTER_NAME/*.cfg ~/
+
+# ask if user wants to restore the calib parameters
+read -p "Do you want to restore printer.cfg (calibration parameters)? " -n 1 -r
+echo    # (optional) move to a new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    cp ~/printer.backup ~/printer.last_known_cfg
+    mv ~/printer.backup ~/printer.cfg
+fi
+
