@@ -15,12 +15,12 @@ fi
 echo "Pulling..." 
 git pull https://github.com/fl0r1s/cr10_klipper/
 # Copy generic files
-echo "Copying generic files..." 
-cp -v -r generic/*.cfg ~/ 
+#echo "Copying generic files..." 
+#cp -v -r generic/*.cfg ~/ 
 
 # copy all files that end with cfg to 1 up
-echo "Copying config files for $PRINTER_NAME..." 
-cp -v -r $PRINTER_NAME/*.cfg ~/
+echo "Copying the printer.cfg file for $PRINTER_NAME..." 
+cp -v -r ~/cr10_klipper/$PRINTER_NAME/printer.cfg ~/printer.cfg
 
 # ask if user wants to restore the calib parameters
 read -p "Do you want to restore printer.cfg (calibration parameters)? " -n 1 -r
