@@ -6,6 +6,7 @@ echo "Moving files"
 cp -v  ~/printer.cfg ~/cr10_klipper/$PRINTER_NAME/printer.cfg
 
 echo "Adding to git"
+cd ~/cr10_klipper
 git add $PRINTER_NAME/printer.cfg
 git commit -m "Uploaded calibration settings" 
 
