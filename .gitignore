@@ -4,3 +4,6 @@ printer.cfg
 # log files
 klippy.log
 moonraker.log
+
+# fluidd
+.fluidd.json
