@@ -36,3 +36,12 @@ cd ~/klipper_config
 
 Easiest way to install is using [kiauh](https://github.com/th33xitus/KIAUH)
 
+## Next steps
+
+### Configuring samba
+
+See [this page](https://3dp.tumbleweedlabs.com/firmware/klipper-firmware/setting-up-samba-for-mainsail)
+
+### Webcam support
+
+See [this page](https://3dp.tumbleweedlabs.com/firmware/klipper-firmware/adding-webcam-support-to-mainsail)
