@@ -1,6 +1,9 @@
 # ignore the printer.cfg in root
 printer.cfg
 
+# all printer backups
+printer-*
+
 # log files
 klippy.log
 moonraker.log
